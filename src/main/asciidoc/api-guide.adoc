@@ -226,3 +226,15 @@ operation::tag-get-example[snippets='response-fields,curl-request,http-response'
 A `PATCH` request is used to update a tag
 
 operation::tag-update-example[snippets='request-fields,curl-request,http-response']
+
+[[resources-tagaa]]
+== 用户
+
+用户的接口如下：添加用户、删除用户
+
+[[resources-tagaa-retrieve]]
+=== 添加用户
+
+添加用户的接口
+
+operation::tag-updateaa-example[snippets='http-request,request-fields,http-response,response-fields']

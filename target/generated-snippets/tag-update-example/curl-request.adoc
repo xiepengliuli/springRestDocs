@@ -1,0 +1,10 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/tags/1' -i -X PATCH \
+    -H 'Content-Type: application/hal+json' \
+    -d '{
+  "name" : "RESTful",
+  "birth" : "100",
+  "id" : 100
+}'
+----

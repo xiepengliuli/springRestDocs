@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.example.notes.ApiDocumentation
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 19.826 sec <<< FAILURE! - in com.example.notes.ApiDocumentation
+indexExample(com.example.notes.ApiDocumentation)  Time elapsed: 0.078 sec  <<< ERROR!
+org.springframework.restdocs.snippet.SnippetException: Links with the following relations were not documented: [users]
+	at org.springframework.restdocs.hypermedia.LinksSnippet.validate(LinksSnippet.java:174)
+	at org.springframework.restdocs.hypermedia.LinksSnippet.createModel(LinksSnippet.java:128)
+	at org.springframework.restdocs.snippet.TemplatedSnippet.document(TemplatedSnippet.java:83)
+	at org.springframework.restdocs.generate.RestDocumentationGenerator.handle(RestDocumentationGenerator.java:196)
+	at org.springframework.restdocs.mockmvc.RestDocumentationResultHandler.handle(RestDocumentationResultHandler.java:55)
+	at org.springframework.test.web.servlet.MockMvc$1.andDo(MockMvc.java:177)
+	at com.example.notes.ApiDocumentation.indexExample(ApiDocumentation.java:114)
+

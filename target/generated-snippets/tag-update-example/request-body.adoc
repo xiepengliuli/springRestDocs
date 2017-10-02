@@ -1,0 +1,8 @@
+[source,options="nowrap"]
+----
+{
+  "name" : "RESTful",
+  "birth" : "100",
+  "id" : 100
+}
+----

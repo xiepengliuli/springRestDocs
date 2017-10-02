@@ -1,0 +1,10 @@
+|===
+|Relation|Description
+
+|`self`
+|Canonical link for this resource
+
+|`profile`
+|The ALPS profile for this resource
+
+|===

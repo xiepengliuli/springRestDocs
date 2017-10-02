@@ -1,0 +1,20 @@
+[source,options="nowrap"]
+----
+{
+  "_links" : {
+    "users" : {
+      "href" : "http://localhost:8080/users{?page,size,sort}",
+      "templated" : true
+    },
+    "tags" : {
+      "href" : "http://localhost:8080/tags"
+    },
+    "notes" : {
+      "href" : "http://localhost:8080/notes"
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/profile"
+    }
+  }
+}
+----

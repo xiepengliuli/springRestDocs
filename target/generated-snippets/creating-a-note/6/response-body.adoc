@@ -1,0 +1,18 @@
+[source,options="nowrap"]
+----
+{
+  "title" : "Tagged note creation with cURL",
+  "body" : "An example of how to create a tagged note using cURL",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/notes/19"
+    },
+    "note" : {
+      "href" : "http://localhost:8080/notes/19"
+    },
+    "tags" : {
+      "href" : "http://localhost:8080/notes/19/tags"
+    }
+  }
+}
+----

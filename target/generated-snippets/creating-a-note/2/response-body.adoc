@@ -1,0 +1,18 @@
+[source,options="nowrap"]
+----
+{
+  "title" : "Note creation with cURL",
+  "body" : "An example of how to create a note using cURL",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/notes/17"
+    },
+    "note" : {
+      "href" : "http://localhost:8080/notes/17"
+    },
+    "tags" : {
+      "href" : "http://localhost:8080/notes/17/tags"
+    }
+  }
+}
+----

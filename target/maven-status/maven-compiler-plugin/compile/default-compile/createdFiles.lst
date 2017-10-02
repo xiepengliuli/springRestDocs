@@ -1,0 +1,10 @@
+com\example\notes\beans\ResultJSON.class
+com\example\notes\NoteRepository.class
+com\example\notes\Tag.class
+com\example\notes\Note.class
+com\example\notes\beans\User.class
+com\example\notes\TagRepository.class
+com\example\notes\service\UserService.class
+com\example\notes\controller\UserController.class
+com\example\notes\dao\UserDao.class
+com\example\notes\RestNotesSpringDataRest.class

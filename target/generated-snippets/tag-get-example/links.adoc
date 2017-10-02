@@ -1,0 +1,13 @@
+|===
+|Relation|Description
+
+|`self`
+|Canonical link for this <<resources-tag,tag>>
+
+|`tag`
+|This <<resources-tag,tag>>
+
+|`notes`
+|The <<resources-tagged-notes,notes>> that have this tag
+
+|===

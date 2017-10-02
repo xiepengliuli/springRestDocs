@@ -1,0 +1,6 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/user/hello' -i -X POST \
+    -H 'Content-Type: application/hal+json' \
+    -d '{"name":"璋㈤箯","age":12,"email":"xiepengtest@163.com"}'
+----

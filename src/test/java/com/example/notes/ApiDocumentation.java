@@ -50,9 +50,11 @@ import org.springframework.restdocs.JUnitRestDocumentation;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
@@ -105,19 +107,19 @@ public class ApiDocumentation {
 								fieldWithPath("timestamp").description("The time, in milliseconds, at which the error occurred"))));
 	}
 
-	@Test
-	public void indexExample() throws Exception {
-		this.mockMvc.perform(get("/"))
-			.andExpect(status().isOk())
-			.andDo(document("index-example",
-					links(
-							linkWithRel("notes").description("The <<resources-notes,Notes resource>>"),
-							linkWithRel("tags").description("The <<resources-tags,Tags resource>>"),
-							linkWithRel("profile").description("The ALPS profile for the service")),
-					responseFields(
-							subsectionWithPath("_links").description("<<resources-index-links,Links>> to other resources"))));
-
-	}
+//	@Test
+//	public void indexExample() throws Exception {
+//		this.mockMvc.perform(get("/"))
+//			.andExpect(status().isOk())
+//			.andDo(document("index-example",
+//					links(
+//							linkWithRel("notes").description("The <<resources-notes,Notes resource>>"),
+//							linkWithRel("tags").description("The <<resources-tags,Tags resource>>"),
+//							linkWithRel("profile").description("The ALPS profile for the service")),
+//					responseFields(
+//							subsectionWithPath("_links").description("<<resources-index-links,Links>> to other resources"))));
+//
+//	}
 
 	@Test
 	public void notesListExample() throws Exception {
@@ -312,30 +314,66 @@ public class ApiDocumentation {
 							subsectionWithPath("_links").description("<<resources-tag-links,Links>> to other resources"))));
 	}
 
+
+	
+
 	@Test
 	public void tagUpdateExample() throws Exception {
 		Map<String, String> tag = new HashMap<String, String>();
 		tag.put("name", "REST");
 
 		String tagLocation = this.mockMvc
-				.perform(
-						post("/tags").contentType(MediaTypes.HAL_JSON).content(
-								this.objectMapper.writeValueAsString(tag)))
+				.perform(post("/tags").contentType(MediaTypes.HAL_JSON)
+						.content(this.objectMapper.writeValueAsString(tag)))
 				.andExpect(status().isCreated()).andReturn().getResponse()
 				.getHeader("Location");
 
 		Map<String, Object> tagUpdate = new HashMap<String, Object>();
 		tagUpdate.put("name", "RESTful");
+		tagUpdate.put("id", 100);
+		tagUpdate.put("birth", "100");
 
-		this.mockMvc.perform(
-				patch(tagLocation).contentType(MediaTypes.HAL_JSON).content(
-						this.objectMapper.writeValueAsString(tagUpdate)))
+		this.mockMvc
+				.perform(patch(tagLocation).contentType(MediaTypes.HAL_JSON)
+						.content(this.objectMapper.writeValueAsString(tagUpdate)))
 				.andExpect(status().isNoContent())
-				.andDo(document("tag-update-example",
-						requestFields(
-								fieldWithPath("name").description("The name of the tag"))));
+				.andDo(document("tag-update-example", requestFields(
+						fieldWithPath("birth").description("出生日期"),
+						fieldWithPath("id").description("年龄"),
+						fieldWithPath("name").description("The name of the tag"))));
 	}
 
+@Test
+	public void tagUpdateExampleaa() throws Exception {
+		//不用对象的原因【如果用对象必须为responseFields配置全的】
+		HashMap<String, Object> hashMap = new HashMap<String, Object>();
+		hashMap.put("name", "谢鹏");
+		hashMap.put("age", 12);
+		hashMap.put("email", "xiepengtest@163.com");
+		
+		String jsonString = JSON.toJSONString(hashMap);
+		System.out.println("#########" +jsonString );
+
+		ResultActions andReturn = this.mockMvc
+				.perform(post("/user/hello").contentType(MediaTypes.HAL_JSON_VALUE)
+						.content(jsonString))
+				.andDo(document("tag-updateaa-example", requestFields(// 添加请求参数的注释【每个参数必须配置】
+						fieldWithPath("name").description("姓名"),
+						fieldWithPath("age").description("年龄"),//
+						fieldWithPath("email").description("邮件地址")),
+						responseFields(// 添加响应体的注释【每个参数必须配置】
+								fieldWithPath("success").description("是否成功"),
+								fieldWithPath("msg").description("错误的提示信息"),
+								fieldWithPath("obj.id").description("主鍵ID"), //
+								fieldWithPath("obj.name").description("姓名"), //
+								fieldWithPath("obj.age").description("年龄"), //
+								fieldWithPath("obj.email").description("邮箱地址")//
+						)));
+
+		System.out.println(andReturn);
+	}
+	
+	
 	private void createNote(String title, String body) {
 		Note note = new Note();
 		note.setTitle(title);

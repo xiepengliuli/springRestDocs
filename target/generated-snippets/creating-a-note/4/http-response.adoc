@@ -1,0 +1,21 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 277
+
+{
+  "name" : "getting-started",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/tags/18"
+    },
+    "tag" : {
+      "href" : "http://localhost:8080/tags/18"
+    },
+    "notes" : {
+      "href" : "http://localhost:8080/tags/18/notes"
+    }
+  }
+}
+----

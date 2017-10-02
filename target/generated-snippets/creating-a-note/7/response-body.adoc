@@ -1,0 +1,26 @@
+[source,options="nowrap"]
+----
+{
+  "_embedded" : {
+    "tags" : [ {
+      "name" : "getting-started",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/tags/18"
+        },
+        "tag" : {
+          "href" : "http://localhost:8080/tags/18"
+        },
+        "notes" : {
+          "href" : "http://localhost:8080/tags/18/notes"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/notes/19/tags"
+    }
+  }
+}
+----

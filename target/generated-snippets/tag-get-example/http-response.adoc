@@ -1,0 +1,21 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 266
+
+{
+  "name" : "REST",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/tags/15"
+    },
+    "tag" : {
+      "href" : "http://localhost:8080/tags/15"
+    },
+    "notes" : {
+      "href" : "http://localhost:8080/tags/15/notes"
+    }
+  }
+}
+----

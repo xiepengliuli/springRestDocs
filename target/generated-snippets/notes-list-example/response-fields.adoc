@@ -1,0 +1,12 @@
+|===
+|Path|Type|Description
+
+|`_embedded.notes`
+|`Array`
+|An array of <<resources-note, Note resources>>
+
+|`_links`
+|`Object`
+|<<resources-tags-list-links, Links>> to other resources
+
+|===

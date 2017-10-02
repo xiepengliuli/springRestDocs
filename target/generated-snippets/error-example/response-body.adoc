@@ -1,0 +1,10 @@
+[source,options="nowrap"]
+----
+{
+  "timestamp" : 1506910701361,
+  "status" : 400,
+  "error" : "Bad Request",
+  "message" : "The tag 'http://localhost:8080/tags/123' does not exist",
+  "path" : "/notes"
+}
+----

@@ -1,0 +1,18 @@
+[source,options="nowrap"]
+----
+{
+  "title" : "REST maturity model",
+  "body" : "http://martinfowler.com/articles/richardsonMaturityModel.html",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/notes/14"
+    },
+    "note" : {
+      "href" : "http://localhost:8080/notes/14"
+    },
+    "tags" : {
+      "href" : "http://localhost:8080/notes/14/tags"
+    }
+  }
+}
+----

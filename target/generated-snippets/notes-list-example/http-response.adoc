@@ -1,0 +1,62 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 1446
+
+{
+  "_embedded" : {
+    "notes" : [ {
+      "title" : "REST maturity model",
+      "body" : "http://martinfowler.com/articles/richardsonMaturityModel.html",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/notes/7"
+        },
+        "note" : {
+          "href" : "http://localhost:8080/notes/7"
+        },
+        "tags" : {
+          "href" : "http://localhost:8080/notes/7/tags"
+        }
+      }
+    }, {
+      "title" : "Hypertext Application Language (HAL)",
+      "body" : "http://stateless.co/hal_specification.html",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/notes/8"
+        },
+        "note" : {
+          "href" : "http://localhost:8080/notes/8"
+        },
+        "tags" : {
+          "href" : "http://localhost:8080/notes/8/tags"
+        }
+      }
+    }, {
+      "title" : "Application-Level Profile Semantics (ALPS)",
+      "body" : "http://alps.io/spec/",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/notes/9"
+        },
+        "note" : {
+          "href" : "http://localhost:8080/notes/9"
+        },
+        "tags" : {
+          "href" : "http://localhost:8080/notes/9/tags"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/notes"
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/profile/notes"
+    }
+  }
+}
+----

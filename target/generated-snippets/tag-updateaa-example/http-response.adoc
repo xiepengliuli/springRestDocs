@@ -1,0 +1,17 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 161
+
+{
+  "success" : true,
+  "msg" : "成功了",
+  "obj" : {
+    "id" : 16,
+    "name" : "谢鹏",
+    "age" : 12,
+    "email" : "xiepengtest@163.com"
+  }
+}
+----
